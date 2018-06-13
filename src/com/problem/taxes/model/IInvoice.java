@@ -25,5 +25,9 @@ public interface IInvoice {
 	public BigDecimal getTotalTax();
 
 	public BigDecimal getTotalValue();
+	
+	public int hashCode();
+	
+	public boolean equals(Object obj);
 
 }

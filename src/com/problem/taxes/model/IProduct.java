@@ -17,5 +17,9 @@ public interface IProduct {
 	public BigDecimal getTaxedUnitValue();
 	
 	public BigDecimal getTaxValue();
+	
+	public int hashCode();
+	
+	public boolean equals(Object obj);
 
 }

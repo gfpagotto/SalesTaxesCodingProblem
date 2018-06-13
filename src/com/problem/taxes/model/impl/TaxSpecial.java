@@ -19,6 +19,8 @@ public class TaxSpecial implements ITax, Serializable {
 
 	private static final long serialVersionUID = 2091756113809143891L;
 
+	private final BigDecimal PERCENT_VALUE = BigDecimal.ZERO;
+	
 	/**
 	 * @return the product price, applying taxes
 	 */
@@ -38,4 +40,29 @@ public class TaxSpecial implements ITax, Serializable {
 		
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((PERCENT_VALUE == null) ? 0 : PERCENT_VALUE.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (!(obj instanceof TaxSpecial))
+			return false;
+		TaxSpecial other = (TaxSpecial) obj;
+		if (PERCENT_VALUE == null) {
+			if (other.PERCENT_VALUE != null)
+				return false;
+		} else if (!PERCENT_VALUE.equals(other.PERCENT_VALUE))
+			return false;
+		return true;
+	}
+	
 }

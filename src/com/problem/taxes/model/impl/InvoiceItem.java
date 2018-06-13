@@ -66,5 +66,36 @@ public class InvoiceItem implements IInvoiceItem, Serializable {
 	public String toString() {
 		return this.getQty().toString() + " " + this.getProduct().getName() + ": " + this.getProduct().getTaxedUnitValue().toString();
 	}
-	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((product == null) ? 0 : product.hashCode());
+		result = prime * result + ((qty == null) ? 0 : qty.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (!(obj instanceof InvoiceItem))
+			return false;
+		InvoiceItem other = (InvoiceItem) obj;
+		if (product == null) {
+			if (other.product != null)
+				return false;
+		} else if (!product.equals(other.product))
+			return false;
+		if (qty == null) {
+			if (other.qty != null)
+				return false;
+		} else if (!qty.equals(other.qty))
+			return false;
+		return true;
+	}
+
 }

@@ -16,5 +16,9 @@ public interface IInvoiceItem {
 	public void setQty(Long qty);
 
 	public Long getQty();
+	
+    public int hashCode();
+	
+	public boolean equals(Object obj);
 
 }

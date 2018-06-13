@@ -9,11 +9,11 @@ public class Main {
 	
 	public static void main(String[] args) {
 
-		InvoiceLoader test = new InvoiceLoader();
+		InvoiceLoader invoiceLoader = new InvoiceLoader();
 
-		Invoice inv01 = test.buildInvoice1();
-		Invoice inv02 = test.buildInvoice2();
-		Invoice inv03 = test.buildInvoice3();
+		Invoice inv01 = invoiceLoader.buildInvoice1();
+		Invoice inv02 = invoiceLoader.buildInvoice2();
+		Invoice inv03 = invoiceLoader.buildInvoice3();
 
 		System.out.println(inv01.toString());
 		System.out.println(inv02.toString());
