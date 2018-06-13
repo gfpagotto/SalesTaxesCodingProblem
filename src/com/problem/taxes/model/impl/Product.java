@@ -1,0 +1,158 @@
+/**
+ * 
+ */
+package com.problem.taxes.model.impl;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+import com.problem.taxes.model.IProduct;
+import com.problem.taxes.model.ITax;
+import com.problem.taxes.model.ProductType;
+
+/**
+ * Main Product Class
+ * 
+ * @author Gustavo Pagotto
+ *
+ */
+public class Product implements IProduct, Serializable {
+
+	private static final long serialVersionUID = -384133437937973616L;
+
+	private String name;
+	private String type;
+	private Boolean isImported;
+	private BigDecimal unitValue;
+	private ITax tax;
+
+	/**
+	 * @param name
+	 *            - Name of the product
+	 * @param type
+	 *            - Type of the product
+	 * @param isImported
+	 *            - if is imported
+	 * @param unitValue
+	 *            - unit value
+	 */
+	public Product(String name, String type, Boolean isImported, BigDecimal unitValue) {
+		super();
+		this.name = name;
+		this.type = type;
+		this.isImported = isImported;
+		this.unitValue = unitValue;
+
+		// Assign taxes for special products
+		if (ProductType.isSpecialType(type).equals(Boolean.TRUE)) {
+			if (isImported.equals(Boolean.TRUE)) {
+				this.tax = new TaxSpecialImported();
+			} else {
+				this.tax = new TaxSpecial();
+			}
+			// Assign tax calculation method for other products
+		} else {
+			if (isImported.equals(Boolean.TRUE)) {
+				this.tax = new TaxOtherImported();
+			} else {
+				this.tax = new TaxOther();
+			}
+		}
+	}
+
+	/**
+	 * @param isImported
+	 *            - determine if a product is imported
+	 */
+	public void setIsImported(Boolean isImported) {
+		this.isImported = isImported;
+	}
+
+	/**
+	 * @param name
+	 *            - The name of Product
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * @param type
+	 *            - product type
+	 */
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	/**
+	 * @param unitValue
+	 *            the unitValue to set
+	 */
+	public void setUnitValue(BigDecimal unitValue) {
+		this.unitValue = unitValue;
+	}
+
+	/**
+	 * @param tax
+	 *            the tax to set
+	 */
+	public void setTax(ITax tax) {
+		this.tax = tax;
+	}
+
+	/**
+	 * @return Name of product
+	 */
+	@Override
+	public String getName() {
+		return this.name;
+	}
+
+	/**
+	 * @return Type of product
+	 */
+	@Override
+	public String getType() {
+		return this.type;
+	}
+
+	/**
+	 * @return If the product is Imported
+	 */
+	@Override
+	public Boolean isImported() {
+		return this.isImported;
+	}
+
+	/**
+	 * @return The unit value of the product, without taxes
+	 */
+	@Override
+	public BigDecimal getUnitValue() {
+		return this.unitValue;
+	}
+
+	/**
+	 * @return The Tax used for this product
+	 */
+	@Override
+	public ITax getTax() {
+		return (ITax) this.tax;
+	}
+
+	/**
+	 * @return The unit value of the product, with the taxes applied
+	 */
+	@Override
+	public BigDecimal getTaxedUnitValue() {
+		return this.tax.evaluateTax(this.unitValue);
+	}
+
+	/**
+	 * @return The tax value, according to the product price
+	 */
+	@Override
+	public BigDecimal getTaxValue() {
+		return this.tax.taxValue(this.unitValue);
+	}
+
+}
