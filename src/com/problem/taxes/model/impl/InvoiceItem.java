@@ -62,4 +62,9 @@ public class InvoiceItem implements IInvoiceItem, Serializable {
 		return this.qty;
 	}
 
+	@Override
+	public String toString() {
+		return this.getQty().toString() + " " + this.getProduct().getName() + ": " + this.getProduct().getTaxedUnitValue().toString();
+	}
+	
 }

@@ -23,7 +23,7 @@ public class TestTaxes implements Serializable {
 	 */
 	public Invoice buildInvoice1() {
 		
-		Invoice invoice = new Invoice("Output01");
+		Invoice invoice = new Invoice("Output 1");
 		
 		invoice.addItem(new InvoiceItem(new Product("book", ProductType.BOOK_PRODUCTS, Boolean.FALSE, new BigDecimal("12.49")), 1L));
 		invoice.addItem(new InvoiceItem(new Product("music CD", ProductType.OTHER_PRODUCTS, Boolean.FALSE, new BigDecimal("14.99")), 1L));
@@ -43,7 +43,7 @@ public class TestTaxes implements Serializable {
 	 */
 	public Invoice buildInvoice2() {
 		
-		Invoice invoice = new Invoice("Output02");
+		Invoice invoice = new Invoice("Output 2");
 		
 		invoice.addItem(new InvoiceItem(new Product("imported box of chocolates", ProductType.FOOD_PRODUCTS, Boolean.TRUE, new BigDecimal("10.00")), 1L));
 		invoice.addItem(new InvoiceItem(new Product("imported bottle of perfume", ProductType.OTHER_PRODUCTS, Boolean.TRUE, new BigDecimal("47.50")), 1L));
@@ -64,7 +64,7 @@ public class TestTaxes implements Serializable {
 	 */	
 	public Invoice buildInvoice3() {
 		
-		Invoice invoice = new Invoice("Output03");
+		Invoice invoice = new Invoice("Output 3");
 		
 		invoice.addItem(new InvoiceItem(new Product("imported bottle of perfume", ProductType.OTHER_PRODUCTS, Boolean.TRUE, new BigDecimal("27.99")), 1L));
 		invoice.addItem(new InvoiceItem(new Product("bottle of perfume", ProductType.OTHER_PRODUCTS, Boolean.FALSE, new BigDecimal("18.99")), 1L));

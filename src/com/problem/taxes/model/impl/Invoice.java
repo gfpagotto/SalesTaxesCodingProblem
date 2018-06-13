@@ -6,6 +6,8 @@ package com.problem.taxes.model.impl;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Iterator;
+
 import com.problem.taxes.model.IInvoice;
 import com.problem.taxes.model.IInvoiceItem;
 import com.problem.taxes.util.Util;
@@ -106,8 +108,6 @@ public class Invoice implements IInvoice, Serializable {
 	@Override
 	public BigDecimal getTotalTax() {
 
-		//this.totalTax = new BigDecimal("0.00");
-		//BigDecimal taxAux = new BigDecimal("0.00");
 		BigDecimal taxAux = new BigDecimal(this.totalTax.doubleValue());
 
 		if (this.items == null) {
@@ -131,7 +131,6 @@ public class Invoice implements IInvoice, Serializable {
 	@Override
 	public BigDecimal getTotalValue() {
 
-		//this.totalValue = BigDecimal.ZERO;
 		BigDecimal totalAux = new BigDecimal(this.totalValue.doubleValue());
 
 		if (this.items == null) {
@@ -159,5 +158,23 @@ public class Invoice implements IInvoice, Serializable {
 	public String getName() {
 		return this.name;
 	}
+
+	@Override
+	public String toString() {
+		
+		String strAux = this.name + ":\n";
+		
+		for (IInvoiceItem invoiceItem : items) {
+			strAux += invoiceItem.toString() + "\n";
+		}
+		
+		strAux += "Sales Taxes: " + this.getTotalTax().setScale(2).toString() + " \n";
+		strAux += "Sales Taxes: " + this.getTotalValue().setScale(2).toString() + " \n";
+		
+		return strAux;
+		
+	}
+	
+	
 
 }
