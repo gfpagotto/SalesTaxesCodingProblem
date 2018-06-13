@@ -9,7 +9,7 @@ import com.problem.taxes.model.ITax;
 import com.problem.taxes.util.Util;
 
 /**
- * Calculate tax for common products, applying 15% over the value.
+ * Calculate tax for common goods, applying 15% over the value.
  * The special products types are defined at ISalesTaxesDef.SPECIAL_TYPES
  * 
  * @author Gustavo Pagotto

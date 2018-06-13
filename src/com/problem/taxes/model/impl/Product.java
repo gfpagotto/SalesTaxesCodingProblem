@@ -10,7 +10,7 @@ import com.problem.taxes.model.ITax;
 import com.problem.taxes.model.ProductType;
 
 /**
- * Main Product Class
+ * Product Class
  * 
  * @author Gustavo Pagotto
  *

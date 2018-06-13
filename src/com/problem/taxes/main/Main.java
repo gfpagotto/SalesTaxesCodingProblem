@@ -1,12 +1,18 @@
 package com.problem.taxes.main;
 
-
 import com.problem.taxes.loader.InvoiceLoader;
 import com.problem.taxes.model.impl.Invoice;
 
+/**
+ * <pre>
+ * Main class
+ * </pre>
+ * 
+ * @author Gustavo Pagotto
+ *
+ */
 public class Main {
 
-	
 	public static void main(String[] args) {
 
 		InvoiceLoader invoiceLoader = new InvoiceLoader();

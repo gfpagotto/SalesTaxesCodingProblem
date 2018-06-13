@@ -9,6 +9,7 @@ import com.problem.taxes.model.IInvoiceItem;
 import com.problem.taxes.model.IProduct;
 
 /**
+ * The items of an Invoice. Will handle products and its quantities.
  * @author Gustavo Pagotto
  *
  */

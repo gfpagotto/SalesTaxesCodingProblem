@@ -5,7 +5,7 @@ package com.problem.taxes.model;
 
 import java.util.Arrays;
 
-import com.problem.taxes.util.ISalesTaxesDef;
+import com.problem.taxes.setup.Settings;
 
 /**
  * @author Gustavo Pagotto
@@ -19,7 +19,7 @@ public abstract class ProductType {
 	public static final String MEDICAL_PRODUCTS = "medical";
 	
 	public static Boolean isSpecialType(String type) {
-		return Arrays.asList(ISalesTaxesDef.SPECIAL_TYPES).contains(type);
+		return Arrays.asList(Settings.SPECIAL_TYPES).contains(type);
 	}
 
 }

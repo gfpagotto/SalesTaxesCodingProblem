@@ -5,6 +5,8 @@ package com.problem.taxes.util;
 
 import java.math.BigDecimal;
 
+import com.problem.taxes.setup.Settings;
+
 /**
  * Utility Class
  * 
@@ -23,8 +25,8 @@ public class Util {
 	 */
 	public static BigDecimal roundValue(BigDecimal value) {
 
-		BigDecimal valueAux = new BigDecimal(Math.ceil((value.divide(ISalesTaxesDef.ROUNDING_RULE).doubleValue())));
-		return valueAux.multiply(ISalesTaxesDef.ROUNDING_RULE);
+		BigDecimal valueAux = new BigDecimal(Math.ceil((value.divide(Settings.ROUNDING_RULE).doubleValue())));
+		return valueAux.multiply(Settings.ROUNDING_RULE);
 		
 	}
 

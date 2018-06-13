@@ -1,10 +1,10 @@
-package com.problem.taxes.util;
+package com.problem.taxes.setup;
 
 import java.math.BigDecimal;
 
 import com.problem.taxes.model.ProductType;
 
-public interface ISalesTaxesDef {
+public interface Settings {
 
 	public static final Boolean IMPORTED_PRODUCT = new Boolean(true);
 	public static final BigDecimal ROUNDING_RULE = new BigDecimal("0.05");

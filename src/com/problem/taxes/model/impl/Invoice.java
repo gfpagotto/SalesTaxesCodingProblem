@@ -11,6 +11,9 @@ import com.problem.taxes.model.IInvoiceItem;
 import com.problem.taxes.util.Util;
 
 /**
+ * <pre>
+ * Represents the invoice, which will handle the itens with products and taxes.
+ * </pre>
  * @author Gustavo Pagotto
  *
  */
@@ -117,7 +120,7 @@ public class Invoice implements IInvoice, Serializable {
 
 				this.totalTax = taxAux.add(item.getProduct().getTaxValue())
 						.multiply(new BigDecimal(item.getQty().longValue()));
-				
+
 				taxAux = new BigDecimal(this.totalTax.doubleValue());
 
 			}
@@ -159,18 +162,18 @@ public class Invoice implements IInvoice, Serializable {
 
 	@Override
 	public String toString() {
-		
+
 		String strAux = this.name + ":\n";
-		
+
 		for (IInvoiceItem invoiceItem : items) {
 			strAux += invoiceItem.toString() + "\n";
 		}
-		
+
 		strAux += "Sales Taxes: " + this.getTotalTax().setScale(2).toString() + " \n";
 		strAux += "Sales Taxes: " + this.getTotalValue().setScale(2).toString() + " \n";
-		
+
 		return strAux;
-		
+
 	}
 
 	@Override
@@ -215,6 +218,5 @@ public class Invoice implements IInvoice, Serializable {
 			return false;
 		return true;
 	}
-	
 
 }
