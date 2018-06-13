@@ -23,9 +23,9 @@ public class Util {
 	 */
 	public static BigDecimal roundValue(BigDecimal value) {
 
-		BigDecimal valueAux =  new BigDecimal(Math.ceil(value.doubleValue() * 20) / 20);
-		return valueAux.setScale(2, BigDecimal.ROUND_HALF_UP);
-
+		BigDecimal valueAux = new BigDecimal(Math.ceil((value.divide(ISalesTaxesDef.ROUNDING_RULE).doubleValue())));
+		return valueAux.multiply(ISalesTaxesDef.ROUNDING_RULE);
+		
 	}
 
 }

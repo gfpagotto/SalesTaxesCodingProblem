@@ -1,10 +1,10 @@
-package com.problem.taxes.test;
+package com.problem.taxes.main;
 
 
 import com.problem.taxes.loader.InvoiceLoader;
 import com.problem.taxes.model.impl.Invoice;
 
-public class MainTest {
+public class Main {
 
 	
 	public static void main(String[] args) {
