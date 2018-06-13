@@ -30,7 +30,7 @@ public class ProductTests {
 		assertFalse(expected.equals(product01.getName()));
 		
 	}
-
+	
 	@Test
 	public final void testGetType() {
 		assertEquals(ProductType.BOOK_PRODUCTS, product01.getType());
@@ -49,6 +49,13 @@ public class ProductTests {
 		
 		Product productClone = product01.clone();
 		assertTrue(product01.equals(productClone));
+		
+	}
+	
+	@Test
+	public final void testCompare() {
+		
+		assertFalse(product01.equals(product02));
 		
 	}
 
