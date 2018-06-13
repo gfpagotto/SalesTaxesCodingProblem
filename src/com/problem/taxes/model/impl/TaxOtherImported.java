@@ -35,7 +35,7 @@ public class TaxOtherImported implements ITax, Serializable {
 	 */
 	@Override
 	public BigDecimal taxValue(BigDecimal value) {
-		return Util.roundValue(value.multiply(PERCENT_VALUE).divide(new BigDecimal("100")));
+		return Util.roundValue(value.multiply(PERCENT_VALUE).divide(new BigDecimal(100)));
 	}
 
 }
