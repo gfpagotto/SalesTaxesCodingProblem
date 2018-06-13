@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 import com.problem.taxes.model.ProductType;
 
-public interface Settings {
+public class Settings {
 
 	public static final Boolean IMPORTED_PRODUCT = new Boolean(true);
 	public static final BigDecimal ROUNDING_RULE = new BigDecimal("0.05");
