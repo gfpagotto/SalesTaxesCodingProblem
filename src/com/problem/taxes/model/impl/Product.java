@@ -198,4 +198,12 @@ public class Product implements IProduct, Serializable {
 		return true;
 	}
 
+	@Override
+	public Product clone() {
+		
+		Product productAux = new Product(this.getName(), this.getType(), this.isImported(), this.getUnitValue());
+		return productAux;
+				
+	}
+	
 }
