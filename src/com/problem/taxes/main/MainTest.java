@@ -1,15 +1,15 @@
 package com.problem.taxes.main;
 
 
+import com.problem.taxes.loader.InvoiceLoader;
 import com.problem.taxes.model.impl.Invoice;
-import com.problem.taxes.test.TestTaxes;
 
 public class MainTest {
 
 	
 	public static void main(String[] args) {
 
-		TestTaxes test = new TestTaxes();
+		InvoiceLoader test = new InvoiceLoader();
 
 		Invoice inv01 = test.buildInvoice1();
 		Invoice inv02 = test.buildInvoice2();

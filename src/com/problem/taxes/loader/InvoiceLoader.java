@@ -1,4 +1,4 @@
-package com.problem.taxes.test;
+package com.problem.taxes.loader;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -8,7 +8,7 @@ import com.problem.taxes.model.impl.Invoice;
 import com.problem.taxes.model.impl.InvoiceItem;
 import com.problem.taxes.model.impl.Product;
 
-public class TestTaxes implements Serializable {
+public class InvoiceLoader implements Serializable {
 
 	private static final long serialVersionUID = -7686457418131198379L;
 	
